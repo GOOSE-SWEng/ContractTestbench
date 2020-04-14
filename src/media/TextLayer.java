@@ -23,13 +23,13 @@ public class TextLayer {
 	
 	public void add(Node node, int slideNumber) {
 		//constructor for the text object
-		//SlideText text = new SlideText(node, slideNumber, height, width);
-		//slideText.add(text);
-		//sp.getChildren().add(text.get());
+		SlideText text = new SlideText(node, slideNumber, height, width);
+		slideText.add(text);
+		sp.getChildren().add(text.get());
 	}
 	
 	public void remove(SlideText object) {
-		//sp.getChildren().remove(object.get());
+		sp.getChildren().remove(object.get());
 	}
 	
 	public SubScene get() {
