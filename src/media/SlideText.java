@@ -1,11 +1,6 @@
 package media;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import javafx.scene.SubScene;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
+import javafx.scene.Group;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
@@ -28,17 +23,22 @@ public class SlideText {
   private int dfFontSize = 12;
   private String dfFontColor = "#000000";
   private TextFlow toDisplay = null;
-  private SubScene scene = null;
   private int slideNumber = 0;
+  private Group group = null;
+  private int startTime = 0;
+  private int endTime = 0;
 
   /**
    * Set up the handler with the target pane and default settings.
    */
   public SlideText(Node node, int slideNumber, int sceneWidth, int sceneHeight) {
     this.slideNumber = slideNumber;
-    Pane blankPane = new Pane();
+    this.group = new Group();
     TextFlow elementText = new TextFlow();
-    this.scene = new SubScene(blankPane, sceneHeight, sceneWidth);
+
+    // Get Start and End Times
+    this.startTime = Integer.parseInt(node.getAttributes().getNamedItem("starttime").getTextContent());
+    this.endTime = Integer.parseInt(node.getAttributes().getNamedItem("endtime").getTextContent());
 
     //Set up defaults
     String fontName = this.dfFont;
@@ -97,7 +97,7 @@ public class SlideText {
     float floatX = Float.parseFloat(node.getAttributes().getNamedItem("xpos").getTextContent());
     float floatY = Float.parseFloat(node.getAttributes().getNamedItem("ypos").getTextContent());
 
-    // Calculate pixel values for x, y, w and h
+    // Calculate pixel values for X and Y
     int x = Math.toIntExact(Math.round((floatX / 100) * sceneWidth));
     int y = Math.toIntExact(Math.round((floatY / 100) * sceneHeight));
 
@@ -107,19 +107,27 @@ public class SlideText {
     this.toDisplay = elementText;
   }
 
-  /**
-   * Draw the text with the provided ID.
-   */
-  public SubScene get() {
-    return scene;
+  public Group get() {
+    return group;
   }
 
-  //TODO
-  //start and end times
+  public int getStartTime() {
+    return startTime;
+  }
+
+  public int getEndTime() {
+    return endTime;
+  }
+
   public int getSlideNo() {
     return slideNumber;
   }
 
   public void start() {
+    group.getChildren().add(toDisplay);
+  }
+
+  public void remove() {
+    group.getChildren().remove(toDisplay);
   }
 }
