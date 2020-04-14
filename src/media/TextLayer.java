@@ -20,16 +20,16 @@ public class TextLayer {
 		this.width = width;
 		sp.setMinSize(width,height);
     this.slideText = slideText;
-    window = new SubScene(sp,width,height);
 	}
 	
 	public void add(Node node, int slideNumber) {
 		//constructor for the text object
-		SlideText text = new SlideText(node, slideNumber, height, width);
+		SlideText text = new SlideText(node, slideNumber, width, height);
     slideText.add(text);
     sp.getChildren().add(text.get());
     text.start();
-    
+    System.out.println(text.getTextFlow().getTranslateX());
+    System.out.println(text.getTextFlow().getTranslateY());
 	}
 	
 	public void remove(SlideText object) {
@@ -37,6 +37,7 @@ public class TextLayer {
 	}
 	
 	public SubScene get() {
+    window = new SubScene(sp,width,height);
 		return (window);
 	}
 }

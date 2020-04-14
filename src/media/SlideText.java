@@ -103,8 +103,11 @@ public class SlideText {
 
     System.out.println("x: " + x + ", y: " + y);
 
-    elementText.setTranslateX(x);
-    elementText.setTranslateY(y);
+    // elementText.setTranslateX(x);
+    // elementText.setTranslateY(y);
+
+    group.setTranslateX(x);
+    group.setTranslateY(y);
 
     this.toDisplay = elementText;
     System.out.println("Created element");
