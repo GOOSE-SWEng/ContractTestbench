@@ -1,0 +1,27 @@
+# OSX
+.DS_Store
+
+# Java
+*.jar
+*.war
+*.ear
+*.class
+*.log
+
+# Eclipse
+*.pydevproject
+.project
+.metadata
+bin/**
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+**/.classpath
+**/.settings/
+.loadpath
+bin/**
+
