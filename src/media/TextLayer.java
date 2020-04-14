@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import org.w3c.dom.Node;
 
+import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.SubScene;
 import javafx.scene.layout.StackPane;
@@ -20,6 +21,7 @@ public class TextLayer {
 		this.width = width;
 		sp.setMinSize(width,height);
     this.slideText = slideText;
+    sp.setAlignment(Pos.TOP_LEFT);
 	}
 	
 	public void add(Node node, int slideNumber) {
@@ -28,8 +30,6 @@ public class TextLayer {
     slideText.add(text);
     sp.getChildren().add(text.get());
     text.start();
-    System.out.println(text.getTextFlow().getTranslateX());
-    System.out.println(text.getTextFlow().getTranslateY());
 	}
 	
 	public void remove(SlideText object) {

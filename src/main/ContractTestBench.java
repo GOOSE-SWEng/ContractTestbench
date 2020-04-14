@@ -47,7 +47,6 @@ public class ContractTestBench extends Application{
 		sp.getChildren().add(tl.get());
 		//Testing here
     Scene scene = new Scene(sp, defaultXSize, defaultYSize);
-    sp.setOnMouseClicked((e) -> {System.out.println("Clicked");});
 		mainStage.setScene(scene);
     mainStage.show();
     tl.add(textNode, 0);
