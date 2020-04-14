@@ -101,6 +101,8 @@ public class SlideText {
     int x = Math.toIntExact(Math.round((floatX / 100) * sceneWidth));
     int y = Math.toIntExact(Math.round((floatY / 100) * sceneHeight));
 
+    System.out.println("x: " + x + ", y: " + y);
+
     elementText.setTranslateX(x);
     elementText.setTranslateY(y);
 

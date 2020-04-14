@@ -42,7 +42,7 @@ public class ContractTestBench extends Application{
     Node textNode = doc.getDocumentElement().getElementsByTagName("text").item(0);
 		StackPane sp = new StackPane();
 		ImageLayer il = new ImageLayer(defaultXSize, defaultYSize, images);
-		TextLayer tl = new TextLayer(defaultXSize, defaultYSize, slideTexts, sp);
+		TextLayer tl = new TextLayer(defaultXSize, defaultYSize, slideTexts);
 		sp.getChildren().add(il.get());
 		sp.getChildren().add(tl.get());
 		//Testing here
