@@ -130,8 +130,4 @@ public class SlideText {
   public void remove() {
     group.getChildren().remove(toDisplay);
   }
-
-  public TextFlow getTextFlow() {
-    return toDisplay;
-  }
 }
