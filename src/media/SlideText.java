@@ -105,9 +105,11 @@ public class SlideText {
     elementText.setTranslateY(y);
 
     this.toDisplay = elementText;
+    System.out.println("Created element");
   }
 
   public Group get() {
+    System.out.println("Returning group");
     return group;
   }
 
@@ -124,10 +126,16 @@ public class SlideText {
   }
 
   public void start() {
+    System.out.println("Starting");
     group.getChildren().add(toDisplay);
   }
 
   public void remove() {
+    System.out.println("Removing");
     group.getChildren().remove(toDisplay);
+  }
+
+  public TextFlow getTextFlow() {
+    return toDisplay;
   }
 }
