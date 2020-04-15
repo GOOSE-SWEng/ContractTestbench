@@ -11,10 +11,9 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 /**
- * Module to display text onto a StackPlane by adding extra TextFlows.
- * Also handles removing text via an ID assigned when drawn.
+ * SlideText class created for Goose-SWEng, as per contract
  *
- * @author Daniel Bishop/Eric Walker
+ * @author CUBIXEL
  *
  */
 public class SlideText {
@@ -28,9 +27,6 @@ public class SlideText {
   private int startTime = 0;
   private int endTime = 0;
 
-  /**
-   * Set up the handler with the target pane and default settings.
-   */
   public SlideText(Node node, int slideNumber, int sceneWidth, int sceneHeight) {
     this.slideNumber = slideNumber;
     this.group = new Group();
@@ -94,6 +90,7 @@ public class SlideText {
       }
     }
 
+    // Get position as percentage
     float floatX = Float.parseFloat(node.getAttributes().getNamedItem("xpos").getTextContent());
     float floatY = Float.parseFloat(node.getAttributes().getNamedItem("ypos").getTextContent());
 

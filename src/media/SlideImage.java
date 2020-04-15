@@ -6,10 +6,9 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 
 /**
- * Module to draw image files onto a StackPlane by adding extra canvas.
- * Also handles deleting images via an ID assigned when drawn.
+ * SlideImage class created for Goose-SWEng, as per contract
  *
- * @author Daniel Bishop
+ * @author CUBIXEL
  *
  */
 public class SlideImage {
@@ -38,11 +37,11 @@ public class SlideImage {
     int w = Math.toIntExact(Math.round((floatW / 100) * sceneWidth));
     int h = Math.toIntExact(Math.round((floatH / 100) * sceneHeight));
 
-    //load image and create canvas
+    //Load image and create canvas
     Image picture = new Image(url, w, h, false, true);
     toDisplay = new Canvas((double) w + x, (double) h + y);
 
-    //draw image to canvas
+    //Draw image to canvas
     GraphicsContext gc = toDisplay.getGraphicsContext2D();
     gc.drawImage(picture, x, y);
   }
