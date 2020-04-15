@@ -29,7 +29,6 @@ public class TextLayer {
 		SlideText text = new SlideText(node, slideNumber, width, height);
     slideText.add(text);
     sp.getChildren().add(text.get());
-    text.start();
 	}
 	
 	public void remove(SlideText object) {
@@ -39,5 +38,9 @@ public class TextLayer {
 	public SubScene get() {
     window = new SubScene(sp,width,height);
 		return (window);
-	}
+  }
+  
+  public ArrayList<SlideText> getList() {
+    return slideText;
+  }
 }

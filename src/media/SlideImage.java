@@ -64,10 +64,19 @@ public class SlideImage {
   }
 
   public void start() {
-    group.getChildren().add(toDisplay);
+    if (!group.getChildren().contains(toDisplay)) {
+      group.getChildren().add(toDisplay);
+    } else {
+      System.err.println("Tried to add duplicate object; ignored");
+    }
+      
   }
 
   public void remove() {
-    group.getChildren().remove(toDisplay);
+    if (group.getChildren().contains(toDisplay)) {
+      group.getChildren().remove(toDisplay);
+    } else {
+      System.err.println("Tried to remove non-existant object; ignored");
+    }
   }
 }

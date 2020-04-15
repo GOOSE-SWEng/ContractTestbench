@@ -51,6 +51,8 @@ public class ContractTestBench extends Application{
     Node textNode = doc.getDocumentElement().getElementsByTagName("text").item(0);
     tl.add(textNode, 0);
     il.add("https://homepages.cae.wisc.edu/~ece533/images/cat.png", 10, 10, 80, 80, 0, -1, 0);
+    tl.getList().get(0).start();
+    il.getList().get(0).start();
     // End CUBIXEL
 	}
 }

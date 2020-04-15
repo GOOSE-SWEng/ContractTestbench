@@ -26,7 +26,6 @@ public class ImageLayer {
 		//constructor for the image object
 		SlideImage image = new SlideImage(urlName, xStart, yStart, width, height, startTime, endTime, slideNumber, sceneWidth, sceneHeight);
     images.add(image);
-    image.start();
 		sp.getChildren().add(image.get());
 	}
 	
@@ -37,5 +36,9 @@ public class ImageLayer {
 	public SubScene get() {
     window = new SubScene(sp,sceneWidth,sceneHeight);
 		return (window);
-	}
+  }
+  
+  public ArrayList<SlideImage> getList() {
+    return images;
+  }
 }
